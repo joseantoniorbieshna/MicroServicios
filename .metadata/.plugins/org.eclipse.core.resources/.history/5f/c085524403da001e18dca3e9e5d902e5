@@ -1,0 +1,5 @@
+package com.cursoms.client;
+
+public class Student {
+	
+}

@@ -1,0 +1,10 @@
+package com.cursoms.client;
+
+import org.springframework.http.ResponseEntity;
+
+public interface StudentClient {
+	
+	
+	@GetMapping("/uno")
+	public ResponseEntity<String> getEstudiante();
+}

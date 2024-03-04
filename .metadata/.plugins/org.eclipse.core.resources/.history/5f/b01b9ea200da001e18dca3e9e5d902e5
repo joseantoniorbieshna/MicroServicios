@@ -1,0 +1,14 @@
+server:
+  port: 8761
+spring:
+  application:
+    name: ms-eureka
+eureka:
+  instance:
+    hostname: localhost
+#Debemos decirle al server que no se registre como microservicio
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+    service-url:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}
