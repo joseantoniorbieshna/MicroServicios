@@ -1,12 +1,6 @@
-server:
-  port: 8091
 spring:
   application:
     name: curso-ms
     
-eureka:
-  instance:
-    hostname: localhost
-  client:
-    service-url:
-      defaultZone: http://localhost:8671/eureka
+  config:
+    import: optional:configserver:http://localhost:8888

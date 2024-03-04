@@ -8,10 +8,10 @@
 		<version>3.2.3</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.eureka-ms</groupId>
-	<artifactId>eureka-ms</artifactId>
+	<groupId>com.adorno</groupId>
+	<artifactId>EurekaMS</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>eureka-ms</name>
+	<name>EurekaMS</name>
 	<description>Demo project for Spring Boot</description>
 	<properties>
 		<java.version>17</java.version>
@@ -27,6 +27,10 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-config</artifactId>
 		</dependency>
 	</dependencies>
 	<dependencyManagement>

@@ -8,10 +8,10 @@
 		<version>3.2.3</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.curso-ms</groupId>
-	<artifactId>curso-ms</artifactId>
+	<groupId>com.adorno</groupId>
+	<artifactId>CursoMS</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>curso-ms</name>
+	<name>CursoMS</name>
 	<description>Demo project for Spring Boot</description>
 	<properties>
 		<java.version>17</java.version>
@@ -33,16 +33,12 @@
 			<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
 		</dependency>
 		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-devtools</artifactId>
-		</dependency>
-		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-openfeign</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter</artifactId>
+			<artifactId>spring-cloud-starter-config</artifactId>
 		</dependency>
 	</dependencies>
 
