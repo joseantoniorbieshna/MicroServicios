@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.cursoms.client.StudentClient;
 
+import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
+
 @RestController
 @RequestMapping("/curso")
 public class CursoController {
@@ -15,8 +17,12 @@ public class CursoController {
 	private StudentClient studentClient;
 	
 	@GetMapping("/uno")
-	public ResponseEntity<?> getCurso(){
-		return studentClient.getEstudiante();
+	@CircuitBreaker(name = "fallback", fallbackMethod = "fallbackRes")
+	public String getCurso(){
+		return studentClient.getEstudiante().getBody()+"de mi";
 	}
 
+	public String fallbackRes(Throwable t){
+		return "fallback rescate";
+	}
 }

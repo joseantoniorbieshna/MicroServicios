@@ -4,3 +4,16 @@ spring:
     
   config:
     import: optional:configserver:http://localhost:8888
+
+resilience4j.circuitbreaker:
+  configs:
+    defaults:
+      registerHealthIndicator: true
+      slidingWindowSize: 10
+      minimumNumberOfCalls: 5
+      permittedNumberOfCallsInHalfOpenState: 3
+      automaticTransitionFromOpenToHalfOpenEnabled: true
+      waitDurationInOpenState: 5s
+      failureRateThreshold: 50
+      eventConsumerBufferSize: 10
+      
