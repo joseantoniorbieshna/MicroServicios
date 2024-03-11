@@ -1,4 +1,4 @@
-version: '1.0'
+version: '3.1'
 services:
 
   config:
@@ -7,7 +7,7 @@ services:
     ports:
       - 8888:8888
     networks:
-      - my-network
+      - mi_red
 
   eureka:
     image: eurekajava
@@ -17,21 +17,21 @@ services:
     depends_on:
       - config
     networks:
-      - my-network
+      - mi_red
 
-  estudiante:
-    image: estudiantejava
-    restart: always
-    ports:
-      - 8090:8090
-    depends_on:
-      - eureka
-      - config
-    networks:
-      - my-network
+  #estudiante:
+    #image: estudiantejava
+    #restart: always
+    #ports:
+      #- 8090:8090
+    #depends_on:
+      #- eureka
+      #- config
+    #networks:
+      #- my-network
 
 volumes:
   myvolume:
 networks:
-  my-network: 
+  mi_red:
     driver: bridge
