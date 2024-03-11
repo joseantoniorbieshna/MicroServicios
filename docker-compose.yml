@@ -1,0 +1,37 @@
+version: '1.0'
+services:
+
+  config:
+    image: configjava
+    restart: always
+    ports:
+      - 8888:8888
+    networks:
+      - my-network
+
+  eureka:
+    image: eurekajava
+    restart: always
+    ports:
+      - 8761:8761
+    depends_on:
+      - config
+    networks:
+      - my-network
+
+  estudiante:
+    image: estudiantejava
+    restart: always
+    ports:
+      - 8090:8090
+    depends_on:
+      - eureka
+      - config
+    networks:
+      - my-network
+
+volumes:
+  myvolume:
+networks:
+  my-network: 
+    driver: bridge
