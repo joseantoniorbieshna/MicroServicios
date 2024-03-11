@@ -1,34 +1,40 @@
 version: '3.1'
 services:
 
-  config:
+  config-server:
     image: configjava
     restart: always
     ports:
-      - 8888:8888
+      - "8888:8888"
+    expose:
+      - "8888"
     networks:
       - mi_red
 
-  eureka:
+  eureka-server:
     image: eurekajava
     restart: always
     ports:
-      - 8761:8761
+      - "8761:8761"
+    expose:
+      - "8761"
     depends_on:
-      - config
+      - config-server
     networks:
       - mi_red
 
-  #estudiante:
-    #image: estudiantejava
-    #restart: always
-    #ports:
-      #- 8090:8090
-    #depends_on:
-      #- eureka
-      #- config
-    #networks:
-      #- my-network
+  estudiante-server:
+    image: estudiantejava
+    restart: always
+    ports:
+      - "8090:8090"
+    expose:
+      - "8090"
+    depends_on:
+      - eureka-server
+      - config-server
+    networks:
+      - mi_red
 
 volumes:
   myvolume:

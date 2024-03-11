@@ -1,10 +1,20 @@
-# BUILD IMAGENES
+# BUILD IMAGENES GUIA
+situate en el repo y copiar desde config hasta antes de notas y pegalo en la consola.
 # Config
-docker build -t configjava:latest <poner aqui ruta completa o ir a la carpeta y poner .>
+cd configserverMS
+mvn clean package spring-boot:repackage
+docker build -t configjava:latest .
+cd ..
 # eureka
-docker build -t eurekajava:latest <poner aqui ruta completa o ir a la carpeta y poner .>
+cd eureka-ms
+mvn clean package spring-boot:repackage
+docker build -t eurekajava:latest .
+cd ..
 # estudiante
-docker build -t estudiantejava:latest <poner aqui ruta completa o ir a la carpeta y poner .>
+cd estudiantems
+mvn clean package spring-boot:repackage
+docker build -t estudiantejava:latest .
+cd ..
 
 ## Nota 
 lo del final sin mayor y menor que
